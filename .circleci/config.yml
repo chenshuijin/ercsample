@@ -7,7 +7,9 @@ jobs:
       - checkout
       - run: npm install
       - save_cache:
-          - key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: v1-node-module
+	  paths:
+	    - ./node_modules
   test:
     docker:
       - image: circleci/node
