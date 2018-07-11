@@ -5,13 +5,15 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: npm install
+      - restore_cache:
+          keys:
+            - v1-node-module
 
-  test:
-    docker:
-      - image: circleci/node
-    steps:
-      - checkout
+      - run: npm install
+      - save_cache:
+          key: v1-node-module
+          paths:
+            - ./node_modules
       - run: npm run test
 
 workflows:
@@ -19,4 +21,3 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
