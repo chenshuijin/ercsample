@@ -1,0 +1,29 @@
+{
+  "name": "ercsample",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test":
+      "./node_modules/.bin/truffle compile && ./node_modules/.bin/truffle test",
+    "coverage": "./node_modules/.bin/solidity-coverage",
+    "coveralls": "cat coverage/lcov.info | node_modules/.bin/coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenshuijin/ercsample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenshuijin/ercsample/issues"
+  },
+  "homepage": "https://github.com/chenshuijin/ercsample#readme",
+  "dependencies": {
+    "coveralls": "^3.0.2",
+    "solidity-coverage": "^0.5.5",
+    "truffle": "^4.1.13"
+  }
+}
