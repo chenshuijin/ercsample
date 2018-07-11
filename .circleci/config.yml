@@ -7,12 +7,13 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-	    - v1-node-module
+            - v1-node-module
+
       - run: npm install
       - save_cache:
           key: v1-node-module
-	  paths:
-	    - ./node_modules
+          paths:
+            - ./node_modules
       - run: npm run test
 
 workflows:
